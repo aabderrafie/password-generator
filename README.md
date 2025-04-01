@@ -100,7 +100,7 @@ Both versions of the password generator:
 
 ## Screenshot
 
-![Python Version](https://github.com/aabderrafie/password-generator/py.png)
+![Python Version](https://github.com/aabderrafie/password-generator/blob/master/py.png)
 
 ## Contributing
 
