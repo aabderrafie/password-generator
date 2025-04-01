@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# Clear the screen based on operating system
 clear_screen() {
   clear
 }
 
+# Print a colorful banner for the password generator
 print_banner() {
   echo -e "\e[36m╔══════════════════════════════════════════════════════════╗"
   echo -e "║                                                          ║"
@@ -22,7 +24,7 @@ print_banner() {
   echo -e "║  \e[32m╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝\e[36m║"
   echo -e "║                                                          ║"
   echo -e "╚══════════════════════════════════════════════════════════╝\e[0m"
-  echo -e "\e[35m     Created by: \e[37mAbderrafie     \e[34mGitHub: \e[37mgithub.com/aabderrafie\e[0m"
+  echo -e "\e[35m     Created by: \e[37m@Abderrafie     \e[34mGitHub: \e[37mgithub.com/aabderrafie\e[0m"
   echo -e "\e[36m══════════════════════════════════════════════════════════════\e[0m"
 }
 
@@ -132,13 +134,19 @@ main() {
   echo -e "\e[36;1m╔═══════════════════ YOUR PASSWORD ═══════════════════╗"
   echo -e "║                                                      ║"
   
-  # Center the password in the display box
-  padding=$(( (52 - ${#password}) / 2 ))
-  spaces_after=$(( 52 - padding - ${#password} ))
+  # Center the password in the display box - Fixed version
+  local total_width=52
+  local pass_len=${#password}
+  local left_padding=$(( (total_width - pass_len) / 2 ))
+  local right_padding=$(( total_width - pass_len - left_padding ))
   
-  printf "\e[36;1m║%${padding}s\e[37;1m%s%${spaces_after}s\e[36;1m║\n" "" "$password" ""
+  # Create padding strings
+  local left_spaces=$(printf "%${left_padding}s" "")
+  local right_spaces=$(printf "%${right_padding}s" "")
   
-  echo -e "║                                                      ║"
+  echo -e "\e[36;1m║${left_spaces}\e[37;1m${password}\e[36;1m${right_spaces}║"
+  
+  echo -e "\e[36;1m║                                                      ║"
   echo -e "╚══════════════════════════════════════════════════════╝\e[0m"
   
   # Display password strength
