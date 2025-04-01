@@ -106,10 +106,6 @@ Both versions of the password generator:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Author
 
 - [Abderrafie](https://github.com/aabderrafie)
