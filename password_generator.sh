@@ -35,7 +35,7 @@ print_banner() {
   echo -e "║  ${green}╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝${cyan}║"
   echo -e "║                                                          ║"
   echo -e "╚══════════════════════════════════════════════════════════╝${reset}"
-  echo -e "${magenta}     Created by: ${white}@Abderrafie     ${blue}GitHub: ${white}github.com/aabderrafie${reset}"
+  echo -e "${magenta}     Created by: ${white}Abderrafie     ${blue}GitHub: ${white}github.com/aabderrafie${reset}"
   echo -e "${cyan}══════════════════════════════════════════════════════════════${reset}"
 }
 

@@ -4,7 +4,6 @@ import time
 import os
 from colorama import Fore, Back, Style, init
 
-# Initialize colorama
 init(autoreset=True)
 
 def clear_screen():
@@ -44,13 +43,11 @@ def generate_password(length):
     - Numbers
     - Special characters
     """
-    # Define character sets
     uppercase_letters = string.ascii_uppercase
     lowercase_letters = string.ascii_lowercase
     digits = string.digits
     special_chars = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
     
-    # Ensure the password has at least one character from each set
     password = [
         random.choice(uppercase_letters),
         random.choice(lowercase_letters),

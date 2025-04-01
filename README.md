@@ -30,11 +30,11 @@ cd password-generator
 2. Create and activate a virtual environment (recommended):
 ```bash
 # On Windows
-python -m venv venv
+python3 -m venv venv 
 venv\Scripts\activate
 
 # On macOS/Linux
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 ```
 
@@ -47,7 +47,7 @@ pip install colorama
 
 Run the Python script:
 ```bash
-python password_generator.py
+python3 password_generator.py
 ```
 
 ## Bash Version
