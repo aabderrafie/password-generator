@@ -98,10 +98,9 @@ Both versions of the password generator:
 - 🔄 Use different passwords for different accounts
 - 🚫 Never share your passwords with anyone
 
-## Screenshots
+## Screenshot
 
-![Python Version](https://github.com/aabderrafie/password-generator/raw/main/py.png)
-![Bash Version](https://github.com/aabderrafie/password-generator/raw/main/bash_screenshot.png)
+![Python Version](https://github.com/aabderrafie/password-generator/py.png)
 
 ## Contributing
 
