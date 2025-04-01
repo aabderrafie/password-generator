@@ -5,27 +5,38 @@ clear_screen() {
   clear
 }
 
+# Define color variables
+reset="\033[0m"
+red="\033[31m"
+green="\033[32m"
+yellow="\033[33m"
+blue="\033[34m"
+magenta="\033[35m"
+cyan="\033[36m"
+white="\033[37m"
+bold="\033[1m"
+
 # Print a colorful banner for the password generator
 print_banner() {
-  echo -e "\e[36m╔══════════════════════════════════════════════════════════╗"
+  echo -e "${cyan}╔══════════════════════════════════════════════════════════╗"
   echo -e "║                                                          ║"
-  echo -e "║  \e[33m██████╗  █████╗ ███████╗███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗\e[36m  ║"
-  echo -e "║  \e[33m██╔══██╗██╔══██╗██╔════╝██╔════╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗\e[36m ║"
-  echo -e "║  \e[33m██████╔╝███████║███████╗███████╗██║ █╗ ██║██║   ██║██████╔╝██║  ██║\e[36m ║"
-  echo -e "║  \e[33m██╔═══╝ ██╔══██║╚════██║╚════██║██║███╗██║██║   ██║██╔══██╗██║  ██║\e[36m ║"
-  echo -e "║  \e[33m██║     ██║  ██║███████║███████║╚███╔███╔╝╚██████╔╝██║  ██║██████╔╝\e[36m ║"
-  echo -e "║  \e[33m╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ \e[36m ║"
+  echo -e "║  ${yellow}██████╗  █████╗ ███████╗███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗${cyan}  ║"
+  echo -e "║  ${yellow}██╔══██╗██╔══██╗██╔════╝██╔════╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗${cyan} ║"
+  echo -e "║  ${yellow}██████╔╝███████║███████╗███████╗██║ █╗ ██║██║   ██║██████╔╝██║  ██║${cyan} ║"
+  echo -e "║  ${yellow}██╔═══╝ ██╔══██║╚════██║╚════██║██║███╗██║██║   ██║██╔══██╗██║  ██║${cyan} ║"
+  echo -e "║  ${yellow}██║     ██║  ██║███████║███████║╚███╔███╔╝╚██████╔╝██║  ██║██████╔╝${cyan} ║"
+  echo -e "║  ${yellow}╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ${cyan} ║"
   echo -e "║                                                          ║"
-  echo -e "║  \e[32m██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗ ██████╗ ██████╗\e[36m ║"
-  echo -e "║  \e[32m██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗\e[36m║"
-  echo -e "║  \e[32m██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   ██║   ██║██████╔╝\e[36m║"
-  echo -e "║  \e[32m██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗\e[36m║"
-  echo -e "║  \e[32m╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║\e[36m║"
-  echo -e "║  \e[32m╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝\e[36m║"
+  echo -e "║  ${green}██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ████████╗ ██████╗ ██████╗${cyan} ║"
+  echo -e "║  ${green}██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗${cyan}║"
+  echo -e "║  ${green}██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║   ██║   ██║   ██║██████╔╝${cyan}║"
+  echo -e "║  ${green}██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗${cyan}║"
+  echo -e "║  ${green}╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║${cyan}║"
+  echo -e "║  ${green}╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝${cyan}║"
   echo -e "║                                                          ║"
-  echo -e "╚══════════════════════════════════════════════════════════╝\e[0m"
-  echo -e "\e[35m     Created by: \e[37m@Abderrafie     \e[34mGitHub: \e[37mgithub.com/aabderrafie\e[0m"
-  echo -e "\e[36m══════════════════════════════════════════════════════════════\e[0m"
+  echo -e "╚══════════════════════════════════════════════════════════╝${reset}"
+  echo -e "${magenta}     Created by: ${white}@Abderrafie     ${blue}GitHub: ${white}github.com/aabderrafie${reset}"
+  echo -e "${cyan}══════════════════════════════════════════════════════════════${reset}"
 }
 
 # Generate a strong password of specified length
@@ -79,7 +90,7 @@ generate_password() {
 
 # Display an animated loading effect
 animate_loading() {
-  echo -e "\n\e[33mGenerating secure password\c"
+  echo -e "\n${yellow}Generating secure password\c"
   for ((i=0; i<5; i++)); do
     sleep 0.3
     echo -e ".\c"
@@ -92,21 +103,21 @@ display_password_strength() {
   local length=$1
   
   if [ "$length" -lt 8 ]; then
-    local strength="\e[31mWeak"
-    local bar="\e[31m[██        ]"
+    local strength="${red}Weak"
+    local bar="${red}[██        ]"
   elif [ "$length" -lt 12 ]; then
-    local strength="\e[33mMedium"
-    local bar="\e[33m[█████     ]"
+    local strength="${yellow}Medium"
+    local bar="${yellow}[█████     ]"
   elif [ "$length" -lt 16 ]; then
-    local strength="\e[32mStrong"
-    local bar="\e[32m[████████  ]"
+    local strength="${green}Strong"
+    local bar="${green}[████████  ]"
   else
-    local strength="\e[36mVery Strong"
-    local bar="\e[36m[██████████]"
+    local strength="${cyan}Very Strong"
+    local bar="${cyan}[██████████]"
   fi
   
-  echo -e "\e[37mPassword Strength: $strength"
-  echo -e "Security Level: $bar\e[0m"
+  echo -e "${white}Password Strength: $strength"
+  echo -e "Security Level: $bar${reset}"
 }
 
 # Main function
@@ -114,24 +125,24 @@ main() {
   clear_screen
   print_banner
   
-  echo -e "\n\e[37;1mEnter password length \e[36m(minimum 8 recommended)\e[37m: \c"
+  echo -e "\n${white}${bold}Enter password length ${cyan}(minimum 8 recommended)${white}: \c"
   read length
   
   # Validate input
   if ! [[ "$length" =~ ^[0-9]+$ ]]; then
-    echo -e "\n\e[31;1mPlease enter a valid number for the password length.\e[0m"
+    echo -e "\n${red}${bold}Please enter a valid number for the password length.${reset}"
     exit 1
   fi
   
   if [ "$length" -lt 4 ]; then
-    echo -e "\n\e[31;1mPassword length must be at least 4 characters to include all character types.\e[0m"
+    echo -e "\n${red}${bold}Password length must be at least 4 characters to include all character types.${reset}"
     exit 1
   fi
   
   animate_loading
   password=$(generate_password "$length")
   
-  echo -e "\e[36;1m╔═══════════════════ YOUR PASSWORD ═══════════════════╗"
+  echo -e "${cyan}${bold}╔═══════════════════ YOUR PASSWORD ═══════════════════╗"
   echo -e "║                                                      ║"
   
   # Center the password in the display box - Fixed version
@@ -144,16 +155,16 @@ main() {
   local left_spaces=$(printf "%${left_padding}s" "")
   local right_spaces=$(printf "%${right_padding}s" "")
   
-  echo -e "\e[36;1m║${left_spaces}\e[37;1m${password}\e[36;1m${right_spaces}║"
+  echo -e "${cyan}${bold}║${left_spaces}${white}${bold}${password}${cyan}${bold}${right_spaces}║"
   
-  echo -e "\e[36;1m║                                                      ║"
-  echo -e "╚══════════════════════════════════════════════════════╝\e[0m"
+  echo -e "${cyan}${bold}║                                                      ║"
+  echo -e "╚══════════════════════════════════════════════════════╝${reset}"
   
   # Display password strength
   display_password_strength "$length"
   
-  echo -e "\n\e[33;1mRemember to store your password securely!"
-  echo -e "Never share your password with anyone!\e[0m"
+  echo -e "\n${yellow}${bold}Remember to store your password securely!"
+  echo -e "Never share your password with anyone!${reset}"
 }
 
 # Run the main function
